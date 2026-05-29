@@ -1,0 +1,171 @@
+CSS Practical Assignments (1 - 5)
+Assignment 1: Basic Text Styling
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Text Styling</title>
+    <style>
+        h1 {
+            font-size: 24px;
+            text-align: center;
+            color: navy;
+        }
+        p {
+            font-family: Arial, sans-serif;
+            color: navy;
+            text-align: justify;
+        }
+    </style>
+</head>
+<body>
+    <h1>Standard Typography Base</h1>
+    <p>This paragraph uses clean Arial font configurations. The text alignment parameters distribute layout spacing uniformly across horizontal boundaries, ensuring tidy visual balance and clean layout structure alignment.</p>
+</body>
+</html>
+Assignment 2: Adding Backgrounds and Colors
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Backgrounds and Colors</title>
+    <style>
+        body {
+            background-color: #e5e5e5;
+            margin: 0;
+            padding: 20px;
+            font-family: sans-serif;
+        }.intro-section {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 25px;
+            width: 80%;
+            margin: 0 auto 15px auto;
+        }.content-section {
+            background-color: #ffffff;
+            color: #333333;
+            padding: 25px;
+            width: 80%;
+            margin: 0 auto 15px auto;
+        }.footer-section {
+            background-color: #1a1a1a;
+            color: #ffffff;
+            padding: 15px;
+            width: 80%;
+            margin: 0 auto;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="intro-section"><h1>Introduction Box</h1><p>Gradient container space.</p></div>
+    <div class="content-section"><h2>Main Content</h2><p>Flat white background card wrapper.</p></div>
+    <div class="footer-section"><p>Footer Content Area</p></div>
+</body>
+</html>
+Assignment 3: Working with Borders and Shadows
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Borders and Shadows</title>
+    <style>.profile-card {
+            width: 300px;
+            padding: 20px;
+            margin: 40px auto;
+            background-color: #ffffff;
+            border: 2px solid #0066cc;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+            font-family: sans-serif;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="profile-card">
+        <h3>Design Profile Card</h3>
+        <p>This card template features rounded corner configurations and soft box-shadow styling definitions to create clean depth.</p>
+    </div>
+</body>
+</html>
+Assignment 4: Creating a Simple Navigation Bar
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Navigation Bar</title>
+    <style>.navbar {
+            text-align: center;
+            background-color: #333;
+            padding: 10px 0;
+        }.navbar a {
+            display: inline-block;
+            color: white;
+            padding: 12px 20px;
+            text-decoration: none;
+            font-family: sans-serif;
+            transition: background-color 0.3s;
+        }.navbar a:hover {
+            background-color: #555;
+            color: #ffcc00;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Contact</a>
+    </nav>
+</body>
+</html>
+Assignment 5: Using Flexbox for Layout
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Layout</title>
+    <style>.app-container {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            font-family: sans-serif;
+        }
+        header, footer {
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        main {
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            background-color: #ecf0f1;
+        }
+        /* Media Query for larger screens */
+        @media (min-width: 768px) {
+            main {
+                flex-direction: row;
+                justify-content: space-around;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <header><h1>Application Header</h1></header>
+        <main>
+            <div style="background: white; padding: 20px; margin: 10px; width: 200px;">Content Block 1</div>
+            <div style="background: white; padding: 20px; margin: 10px; width: 200px;">Content Block 2</div>
+        </main>
+        <footer><p>Application Footer © 2026</p></footer>
+    </div>
+</body>
+</html>
