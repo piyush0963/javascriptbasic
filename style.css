@@ -1,0 +1,147 @@
+// Variables for High-Contrast Theme
+$bg-color: #121212;
+$text-color: #ffffff;
+$primary-accent: #ffeb3b; 
+$secondary-accent: #2196f3;
+$focus-color: #ff5722;
+$font-stack: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+// Mixins for Reusable Components
+@mixin flex-center($direction: row) {
+    display: flex;
+    flex-direction: $direction;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin button-style($bg, $color) {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 15px;
+    background-color: $bg;
+    color: $color;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 8px;
+    font-weight: bold;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+
+    &:hover {
+        background-color: darken($bg, 15%);
+    }
+
+    &:focus {
+        outline: none;
+        border-color: $focus-color; // Visible focus indicator for accessibility
+    }
+}
+
+// Base Styles
+body {
+    font-family: $font-stack;
+    background-color: $bg-color;
+    color: $text-color;
+    margin: 0;
+    padding: 0;
+    @include flex-center(column);
+}
+
+header, nav, section, footer {
+    width: 100%;
+    max-width: 800px; // Split-screen desktop logic constraint
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+header {
+    text-align: center;
+    border-bottom: 2px solid $primary-accent;
+    
+    h1 {
+        margin: 0;
+        font-size: 2.5rem;
+    }
+}
+
+nav {
+    @include flex-center(row);
+    gap: 20px;
+    
+    a {
+        color: $primary-accent;
+        text-decoration: none;
+        font-size: 1.2rem;
+        
+        &:hover {
+            text-decoration: underline;
+        }
+        
+        &:focus {
+            outline: 2px dashed $focus-color;
+        }
+    }
+}
+
+// Layout Architecture.content-block {
+    background-color: lighten($bg-color, 10%);
+    border-radius: 10px;
+    margin-top: 20px;.link-container {
+        @include flex-center(row); // Desktop: side-by-side
+        flex-wrap: wrap;
+        gap: 15px;
+    }.social-btn {
+        @include button-style($primary-accent, #000);
+        flex: 1 1 30%; // Fluid grid system
+        
+        i {
+            margin-right: 8px;
+        }
+    }
+}.contact-form {
+    @include flex-center(column);
+    align-items: flex-start;
+    
+    label {
+        margin-top: 10px;
+    }
+    
+    input {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        
+        &:focus {
+            outline: 2px solid $focus-color;
+        }
+    }.submit-btn {
+        margin-top: 20px;
+        @include button-style($secondary-accent, #fff);
+        border: none;
+        cursor: pointer;
+    }
+}
+
+footer {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+// Responsive Media Query
+@media (max-width: 600px) {.content-block {.link-container {
+            @include flex-center(column); // Reconfigures to single-column mobile experience
+        }.social-btn {
+            width: 100%;
+        }
+    }
+    
+    header h1 {
+        font-size: 2rem;
+    }
+}
